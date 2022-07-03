@@ -7,7 +7,13 @@ module.exports = function (api) {
     proposals: true
   }
 
-  // 配置项：https://babel.docschina.org/docs/en/options/
+  /**
+   * 配置项：https://babel.docschina.org/docs/en/options/
+   *
+   * 先执行完所有 Plugin，再执行 Preset。
+   * 多个 Plugin，按照声明次序顺序执行。
+   * 多个 Preset，按照声明次序逆序执行。
+   */
   return {
     comments: true,
     presets: [

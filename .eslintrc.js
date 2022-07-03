@@ -1,11 +1,11 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('path')
+const fs = require('fs')
 
 // https://eslint.org/docs/user-guide/configuring/
 class EslintRecommendConfig {
   constructor() {
     this.cwd = process.cwd()
-    this.isTsProject = fs.existsSync(path.resolve(this.cwd, 'tsconfig.json'));
+    this.isTsProject = fs.existsSync(path.resolve(this.cwd, 'tsconfig.json'))
     this.packageJSON = require(path.join(this.cwd, 'package.json')) // package.json文件信息对象
     this.dependencies = Object.keys({
       ...this.packageJSON['devDependencies'],
@@ -109,6 +109,7 @@ class EslintRecommendConfig {
   buildConfig() {
     this.config.rules = {
       'require-jsdoc': 'off',
+      'no-control-regex': 'off',
       'no-invalid-this': 'off',
       'linebreak-style': 'off',
       'max-len': 'off',
@@ -164,6 +165,7 @@ class EslintRecommendConfig {
 
     if (this.isTsProject) {
       Object.assign(this.config.rules, {
+        '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-var-requires': 'off'
       })
     }
@@ -178,4 +180,4 @@ class EslintRecommendConfig {
   }
 }
 
-module.exports = new EslintRecommendConfig().build().toConfig();
+module.exports = new EslintRecommendConfig().build().toConfig()
