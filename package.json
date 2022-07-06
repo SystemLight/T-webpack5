@@ -13,7 +13,8 @@
     "build:babel": "babel src/ -d dist/ -s",
     "build:webpack": "webpack --mode production",
     "build:webpack-dev": "webpack --mode development",
-    "dev:serve": "webpack serve --mode development"
+    "dev:serve": "webpack serve --mode development",
+    "dev:plop": "plop"
   },
   "keywords": [],
   "description": "Front end development template based on webpack5.",
@@ -44,11 +45,16 @@
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
+    "body-parser": "^1.20.0",
+    "chalk": "4.1.2",
+    "chokidar": "^3.5.3",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
+    "mockjs": "^1.1.0",
+    "plop": "^3.1.1",
     "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "postcss-preset-env": "^7.7.1",
@@ -73,6 +79,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.3",
+    "axios": "^0.27.2",
     "core-js": "^3.23.1"
   }
 }
