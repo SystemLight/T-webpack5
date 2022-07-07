@@ -3,8 +3,53 @@ const fs = require('fs')
 
 const webpack = require('webpack')
 
-// webpack配置项：https://webpack.js.org/configuration/
+/**
+ * @typedef Webpack5RecommendConfigOptions
+ * @property {String?} cwd
+ * @property {String?} srcPath
+ * @property {String?} distPath
+ * @property {Object?} packageJSON
+ * @property {String?} staticFolderPath
+ * @property {Boolean?} isTsProject
+ * @property {Boolean?} isEntryJSX
+ * @property {String?} scriptExt
+ * @property {String?} entryDefaultName
+ * @property {String | null?} entryDefaultFileName
+ * @property {Boolean?} enableProfile
+ * @property {Boolean?} enableProxy
+ * @property {Boolean?} enableMock
+ * @property {Boolean?} enableThread
+ * @property {Boolean?} enableHash
+ * @property {Boolean?} enableSplitChunk
+ * @property {Boolean?} enableBabel
+ * @property {Boolean?} enableMinimize
+ * @property {Boolean?} enableResolveCss
+ * @property {Boolean?} enableResolveAsset
+ * @property {Boolean?} enableBuildNodeLibrary
+ * @property {Boolean?} emitHtml
+ * @property {Boolean?} emitCss
+ * @property {Boolean?} emitPublic
+ * @property {String | null?} title
+ * @property {String?} publicPath
+ * @property {Boolean | 'auto'?} libraryName
+ * @property {String[]?} externals
+ * @property {Boolean?} skipCheckBabel
+ */
+
+/**
+ * @callback BuildCallback
+ * @param {Webpack5RecommendConfigOptions[]} options
+ * @return {void}
+ */
+
 class Webpack5RecommendConfig {
+  /**
+   * webpack配置项：https://webpack.js.org/configuration/
+   * @param {any[]} env
+   * @param {Object} argv
+   * @param {'development' | 'production'} argv.mode
+   * @param {Webpack5RecommendConfigOptions[] | Webpack5RecommendConfigOptions?} options
+   */
   constructor(env, argv, options) {
     this.mode = argv.mode || 'development'
     this.isProduction = this.mode === 'production'
@@ -127,6 +172,12 @@ class Webpack5RecommendConfig {
     }
   }
 
+  /**
+   * 获取库构建参数
+   * @param {Boolean | String?} libraryName
+   * @param {BuildCallback?} buildCallback
+   * @returns {Webpack5RecommendConfigOptions[]}
+   */
   static buildLibraryOptions(libraryName, buildCallback) {
     let options = [
       {
@@ -137,7 +188,7 @@ class Webpack5RecommendConfig {
         enableHash: false
       },
       {emitPublic: false},
-      null
+      {}
     ]
     if (buildCallback) {
       buildCallback(options)
@@ -145,6 +196,11 @@ class Webpack5RecommendConfig {
     return options
   }
 
+  /**
+   * 获取node库构建参数
+   * @param {BuildCallback?} buildCallback
+   * @return {Webpack5RecommendConfigOptions[]}
+   */
   static buildNodeOptions(buildCallback) {
     return Webpack5RecommendConfig.buildLibraryOptions('library', (options) => {
       options[0].enableResolveCss = false
@@ -155,6 +211,12 @@ class Webpack5RecommendConfig {
     })
   }
 
+  /**
+   * 获取React库构建参数
+   * @param {Boolean | String?} libraryName
+   * @param {BuildCallback?} buildCallback
+   * @return {Webpack5RecommendConfigOptions[]}
+   */
   static buildReactLibraryOptions(libraryName, buildCallback) {
     return Webpack5RecommendConfig.buildLibraryOptions(libraryName, (options) => {
       options[0].externals = ['react']
@@ -162,6 +224,15 @@ class Webpack5RecommendConfig {
     })
   }
 
+  /**
+   * 创建Webpack5RecommendConfig
+   * @param {any[]} env
+   * @param {Object} argv
+   * @param {'development' | 'production'} argv.mode
+   * @param {Boolean | String?} libraryName
+   * @param {BuildCallback?} buildCallback
+   * @return {Webpack5RecommendConfig}
+   */
   static newLibrary(env, argv, libraryName, buildCallback) {
     return new Webpack5RecommendConfig(
       env, argv,
@@ -169,6 +240,14 @@ class Webpack5RecommendConfig {
     )
   }
 
+  /**
+   * 创建Webpack5RecommendConfig
+   * @param {any[]} env
+   * @param {Object} argv
+   * @param {'development' | 'production'} argv.mode
+   * @param {BuildCallback?} buildCallback
+   * @return {Webpack5RecommendConfig}
+   */
   static newNodeLibrary(env, argv, buildCallback) {
     return new Webpack5RecommendConfig(
       env, argv,
@@ -176,6 +255,15 @@ class Webpack5RecommendConfig {
     )
   }
 
+  /**
+   * 创建Webpack5RecommendConfig
+   * @param {any[]} env
+   * @param {Object} argv
+   * @param {'development' | 'production'} argv.mode
+   * @param {Boolean | String?} libraryName
+   * @param {BuildCallback?} buildCallback
+   * @return {Webpack5RecommendConfig}
+   */
   static newReactLibrary(env, argv, libraryName, buildCallback) {
     return new Webpack5RecommendConfig(
       env, argv,
@@ -771,4 +859,4 @@ class Webpack5RecommendConfig {
   }
 }
 
-module.exports = (env, argv) => new Webpack5RecommendConfig(env, argv, {enableMock: true}).build().toConfig()
+module.exports = (env, argv) => new Webpack5RecommendConfig(env, argv).build().toConfig()
