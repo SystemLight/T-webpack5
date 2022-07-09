@@ -9,6 +9,7 @@ specifiers:
   '@babel/runtime-corejs3': ^7.18.3
   '@commitlint/cli': ^17.0.2
   '@commitlint/config-conventional': ^17.0.2
+  '@systemlight/webpack-config': ^5.0.0
   '@typescript-eslint/eslint-plugin': ^5.28.0
   '@typescript-eslint/parser': ^5.28.0
   axios: ^0.27.2
@@ -59,6 +60,7 @@ devDependencies:
   '@babel/preset-env': 7.18.2_@babel+core@7.18.5
   '@commitlint/cli': 17.0.2
   '@commitlint/config-conventional': 17.0.2
+  '@systemlight/webpack-config': 5.0.0_webpack@5.73.0
   '@typescript-eslint/eslint-plugin': 5.28.0_7yumg2qjgbp7maccqlfhx2vudu
   '@typescript-eslint/parser': 5.28.0_ud6rd4xtew5bv4yhvkvu24pzm4
   babel-loader: 8.2.5_te6ollfzjcco6mbxjl755ucqke
@@ -1713,6 +1715,15 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@systemlight/webpack-config/5.0.0_webpack@5.73.0:
+    resolution: {integrity: sha512-4mbbG75IwcxR8YJz4zIlIGLy8U/DkpV/wKjcnolVvFJUBiueG3dyiL80lEIv0nCPQmZcEq8xsW+Hngr5+CB1Ow==}
+    engines: {node: '>=16.15.0'}
+    peerDependencies:
+      webpack: ^5.20.0
+    dependencies:
+      webpack: 5.73.0_webpack-cli@4.10.0
     dev: true
 
   /@tsconfig/node10/1.0.9:
