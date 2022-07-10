@@ -31,6 +31,7 @@ class EslintRecommendConfig {
 
   build() {
     this.buildBasic()
+    this.buildExtents()
     this.buildParser()
     this.buildFormatter()
     this.buildPlugin()
@@ -47,6 +48,11 @@ class EslintRecommendConfig {
       node: true
     }
     this._config.settings = {}
+
+    return this
+  }
+
+  buildExtents() {
     this._config.extends = [
       'eslint:recommended'
     ]
@@ -68,23 +74,33 @@ class EslintRecommendConfig {
       )
     }
 
+    if (this.isInclude('vue')) {
+      this._config.extends.push(
+        'plugin:vue/vue3-recommended' // eslint-plugin-vue
+      )
+    }
+
     return this
   }
 
   buildParser() {
-    // ts解析器：https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/parser
-    // js解析器：https://www.npmjs.com/package/@babel/eslint-parser
+    this._config.parserOptions = {}
+
     if (this.isTsProject) {
+      // ts解析器：https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/parser
       this._config.parser = '@typescript-eslint/parser'
-      this._config.parserOptions = {}
     } else {
+      // js解析器：https://www.npmjs.com/package/@babel/eslint-parser
       this._config.parser = '@babel/eslint-parser'
+
       let presets = ['@babel/preset-env']
       let plugins = []
+
       if (this.isInclude('react')) {
         presets.push('@babel/preset-react')
       }
-      if (this.dependencies.includes('@babel/plugin-proposal-decorators')) {
+
+      if (this.isInclude('@babel/plugin-proposal-decorators')) {
         plugins.push(
           // 装饰器属性，https://babel.dev/docs/en/babel-plugin-proposal-decorators
           [
@@ -95,19 +111,24 @@ class EslintRecommendConfig {
           ]
         )
       }
-      this._config.parserOptions = {
-        requireConfigFile: false,
-        babelOptions: {
-          presets: presets,
-          plugins: plugins
-        }
+
+      this._config.parserOptions.requireConfigFile = false
+      this._config.parserOptions.babelOptions = {
+        presets: presets,
+        plugins: plugins
       }
     }
 
-    Object.assign(this._config.parserOptions, {
-      sourceType: 'module',
-      ecmaVersion: 2022
-    })
+    if (this.isInclude('vue')) {
+      this._config.parserOptions = {
+        parser: this._config.parser,
+        ...this._config.parserOptions
+      }
+      this._config.parser = 'vue-eslint-parser'
+    }
+
+    this._config.parserOptions.sourceType = 'module'
+    this._config.parserOptions.ecmaVersion = 2022
 
     return this
   }
@@ -183,10 +204,22 @@ class EslintRecommendConfig {
     if (this.isTsProject) {
       const typescriptRule = {
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-var-requires': 'off'
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-explicit-any': 'off'
       }
       Object.assign(this._config.rules, typescriptRule)
     }
+
+    if (this.isInclude('react')) {
+      const reactRule = {}
+      Object.assign(this._config.rules, reactRule)
+    }
+
+    if (this.isInclude('vue')) {
+      const vueRule = {}
+      Object.assign(this._config.rules, vueRule)
+    }
+
     return this
   }
 

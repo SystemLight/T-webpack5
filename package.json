@@ -5,8 +5,8 @@
     "lint:prettier": "prettier src/ -w",
     "lint:stylelint-prettier-check": "stylelint-config-prettier-check",
     "lint:stylelint": "stylelint src/**/*.{scss,css} --fix",
-    "lint:eslint-check": "eslint src/ --ext .jsx,.js,ts,tsx",
-    "lint:eslint": "eslint src/ --ext .jsx,.js,ts,tsx --fix",
+    "lint:eslint-check": "eslint src/ --ext .jsx,.js,.ts,.tsx",
+    "lint:eslint": "eslint src/ --ext .jsx,.js,.ts,.tsx --fix",
     "build:scss": "sass src/:dist/",
     "build:postcss": "postcss dist/**/*.css -r",
     "build:tsc": "tsc -b",
@@ -37,12 +37,11 @@
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.5",
-    "@babel/eslint-parser": "^7.18.2",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@systemlight/webpack-config": "^5.0.0",
+    "@systemlight/webpack-config": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
@@ -80,7 +79,6 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.3",
-    "axios": "^0.27.2",
     "core-js": "^3.23.1"
   }
 }
