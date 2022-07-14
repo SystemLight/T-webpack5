@@ -112,7 +112,7 @@ class EslintRecommendConfig {
         )
       }
 
-      this._config.parserOptions.requireConfigFile = false
+      this._config.parserOptions.requireConfigFile = false // 如果存在babel.config.js则无效
       this._config.parserOptions.babelOptions = {
         presets: presets,
         plugins: plugins
