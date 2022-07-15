@@ -19,3 +19,29 @@
 - [babel](https://babel.docschina.org/docs/en/usage/)
 - [typescript](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 - [webpack](https://webpack.js.org/configuration/)
+
+### Mock数据
+
+- `mock/index.js`
+
+```javascript
+const mocks = [
+  // #auto-mock
+]
+
+module.exports = mocks
+```
+
+- `webpack.config.js`
+
+```javascript
+const webpack5RecommendConfig = require('@systemlight/webpack-config')
+const {mockServer} = require('@systemlight/webpack-config-mockserver')
+
+module.exports = (env, argv) => new webpack5RecommendConfig(env, argv, {
+  enableMock: true,
+  mockServer: mockServer
+})
+  .build()
+  .toConfig()
+```
