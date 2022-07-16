@@ -2,6 +2,10 @@
 
 > Front end development template based on webpack5.
 
+### 相关项目
+
+- [createVue](https://github.com/zxpsuper/createVue)
+
 ### 文档
 
 #### 开发配置
