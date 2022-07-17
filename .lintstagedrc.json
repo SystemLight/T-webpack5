@@ -1,5 +1,7 @@
 {
   "*.{js,jsx,ts,tsx}": [
-    "prettier -w"
-  ]
+    "prettier -w",
+    "eslint --fix"
+  ],
+  "*.{scss,css}": "stylelint --fix"
 }

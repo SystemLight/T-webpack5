@@ -2,9 +2,7 @@
   "name": "t-webpack5",
   "version": "1.0.0",
   "scripts": {
-    "plop": "plop",
-    "husky": "husky install",
-    "lint": "lint-staged",
+    "prepare": "husky install",
     "lint:prettier": "prettier src/ -w",
     "lint:stylelint-prettier-check": "stylelint-config-prettier-check",
     "lint:stylelint": "stylelint src/**/*.{scss,css} --fix",
@@ -16,7 +14,8 @@
     "build:babel": "babel src/ -d dist/ -s",
     "build:webpack": "webpack --mode production",
     "build:webpack-dev": "webpack --mode development",
-    "dev:serve": "webpack serve --mode development"
+    "dev:serve": "webpack serve --mode development",
+    "dev:plop": "plop"
   },
   "keywords": [],
   "description": "Front end development template based on webpack5.",
