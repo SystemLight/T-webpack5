@@ -4,25 +4,16 @@ declare interface WebpackHotModule {
   }
 }
 
-declare var process: any
-declare var module: WebpackHotModule
-declare var webpack5RecommendConfigOptions: any
-
-declare module '*.svg'
-declare module '*.png'
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.gif'
-declare module '*.bmp'
-declare module '*.tiff'
+declare let process: any
+declare let module: WebpackHotModule
 
 declare module '*.css' {
-  const classes: { readonly [key: string]: string }
+  const classes: {readonly [key: string]: string}
   export default classes
 }
 
 declare module '*.scss' {
-  const classes: { readonly [key: string]: string }
+  const classes: {readonly [key: string]: string}
   export default classes
 }
 
@@ -31,3 +22,11 @@ declare module '*.vue' {
   const component: ReturnType<typeof defineComponent>
   export default component
 }
+
+declare module '*.svg'
+declare module '*.png'
+declare module '*.jpg'
+declare module '*.jpeg'
+declare module '*.gif'
+declare module '*.bmp'
+declare module '*.tiff'
