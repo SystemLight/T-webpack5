@@ -44,6 +44,7 @@
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@systemlight/webpack-config": "^5.2.2",
+    "@systemlight/webpack-config-mockserver": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
@@ -77,5 +78,9 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpackbar": "^5.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "tailwindcss": "^3.1.6"
   }
 }
