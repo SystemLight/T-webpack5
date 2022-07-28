@@ -25,3 +25,5 @@
 - [babel](https://babel.docschina.org/docs/en/usage/)
 - [typescript](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 - [webpack](https://webpack.js.org/configuration/)
+- [rollup](https://github.com/rollup/rollup)
+- [vite](https://vitejs.dev/config/)
