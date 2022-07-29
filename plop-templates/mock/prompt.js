@@ -19,7 +19,7 @@ const config = {
       },
       {
         type: 'append',
-        pattern: /\/\/ #auto-mock/,
+        pattern: /\/\/ @mockjs-route/,
         path: 'mock/index.js',
         template: `  ...require('./{{kebabCase name}}'),`
       }

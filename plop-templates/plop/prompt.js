@@ -24,7 +24,7 @@ const config = {
         },
         {
             type: 'append',
-            pattern: /\/\/ #auto-import/,
+            pattern: /\/\/ @plop-auto/,
             path: 'plopfile.js',
             template: `  plop.setGenerator('{{kebabCase name}}-template', require('./plop-templates/{{kebabCase name}}/prompt'))`
         }

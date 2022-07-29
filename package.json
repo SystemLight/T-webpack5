@@ -16,11 +16,11 @@
     "build:webpack-dev": "webpack --mode development",
     "build:rollup": "rollup -c",
     "build:vite": "vite build",
-    "dev:vite-serve": "vite",
-    "dev:vite-preview": "vite preview",
     "dev:webpack-analyze": "webpack --mode development --analyze",
     "dev:webpack-serve": "webpack serve --mode development",
-    "dev:plop": "plop"
+    "dev:plop": "plop",
+    "build": "npm run build:webpack",
+    "serve": "npm run dev:webpack-serve"
   },
   "keywords": [],
   "description": "Front end development template based on webpack5.",
@@ -45,18 +45,17 @@
     "@babel/core": "^7.18.5",
     "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "@babel/runtime-corejs3": "^7.18.3",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "@systemlight/webpack-config": "^5.5.7",
+    "@systemlight/webpack-config-mockserver": "^5.1.2",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
-    "core-js": "^3.23.1",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
     "html-webpack-plugin": "^5.5.0",
@@ -89,5 +88,10 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "webpackbar": "^5.0.2"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.18.3",
+    "axios": "^0.27.2",
+    "core-js": "^3.23.1"
   }
 }
