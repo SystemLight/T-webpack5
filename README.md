@@ -2,13 +2,13 @@
 
 > Front end development template based on webpack5.
 
-### 相关项目
+## 相关项目
 
 - [createVue](https://github.com/zxpsuper/createVue)
 
-### 文档
+## 文档
 
-#### 开发配置
+### 开发配置
 
 - [package.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 - [browserslist](https://github.com/browserslist/browserslist)
@@ -27,3 +27,9 @@
 - [webpack](https://webpack.js.org/configuration/)
 - [rollup](https://github.com/rollup/rollup)
 - [vite](https://vitejs.dev/config/)
+
+### issue
+
+- macOS下husky不执行？
+
+> 设置权限使用 `chmod 777 .husky/*`
