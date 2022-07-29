@@ -6,6 +6,7 @@ module.exports = wcf({
     enableFriendly: true,
     emitHtml: true,
     enableMock: true,
-    mockServer: mockServer
+    mockServer: mockServer,
+    postcss: true
   }
 })

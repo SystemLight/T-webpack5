@@ -216,7 +216,9 @@ class EslintRecommendConfig {
     }
 
     if (this.isInclude('vue')) {
-      const vueRule = {}
+      const vueRule = {
+        'vue/multi-word-component-names': 'off'
+      }
       Object.assign(this._config.rules, vueRule)
     }
 
