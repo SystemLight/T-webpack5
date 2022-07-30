@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+import './hello.vue'
 import '@/global.scss'
 
 // mockjs api
