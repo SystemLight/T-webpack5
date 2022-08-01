@@ -21,7 +21,8 @@ class EslintRecommendConfig {
 
     this.isTsProject = _options.isTsProject
     this.packageJSON = _options.packageJSON
-    this.dependencies = Object.keys({ // 项目依赖库数组，用于判定包含什么框架
+    this.dependencies = Object.keys({
+      // 项目依赖库数组，用于判定包含什么框架
       ...this.packageJSON['devDependencies'],
       ...this.packageJSON['dependencies']
     })
@@ -53,9 +54,7 @@ class EslintRecommendConfig {
   }
 
   buildExtents() {
-    this._config.extends = [
-      'eslint:recommended'
-    ]
+    this._config.extends = ['eslint:recommended']
 
     if (this.isTsProject) {
       this._config.extends.push(
@@ -120,6 +119,7 @@ class EslintRecommendConfig {
     }
 
     if (this.isInclude('vue')) {
+      // 使用vue时将解析权交给vue-eslint-parser
       this._config.parserOptions = {
         parser: this._config.parser,
         ...this._config.parserOptions
@@ -151,51 +151,39 @@ class EslintRecommendConfig {
       'linebreak-style': 'off',
       'max-len': 'off',
       'no-unused-vars': 'off',
-      'quotes': [
-        'error',
-        'single'
-      ],
-      'semi': [
-        'error',
-        'never'
-      ],
-      'arrow-parens': [
-        'error',
-        'always'
-      ],
+      quotes: ['error', 'single'],
+      semi: ['error', 'never'],
+      'arrow-parens': ['error', 'always'],
       'comma-dangle': [
         'error',
         {
-          'arrays': 'never',
-          'objects': 'never',
-          'imports': 'never',
-          'exports': 'never',
-          'functions': 'never'
+          arrays: 'never',
+          objects: 'never',
+          imports: 'never',
+          exports: 'never',
+          functions: 'never'
         }
       ],
-      'indent': [
+      indent: [
         'error',
         2,
         {
-          'SwitchCase': 1
+          SwitchCase: 1
         }
       ],
-      'padded-blocks': [
-        'error',
-        'never'
-      ],
+      'padded-blocks': ['error', 'never'],
       'space-before-function-paren': [
         'error',
         {
-          'asyncArrow': 'always',
-          'anonymous': 'always',
-          'named': 'never'
+          asyncArrow: 'always',
+          anonymous: 'always',
+          named: 'never'
         }
       ],
       'no-multiple-empty-lines': [
         'error',
         {
-          'max': 1
+          max: 1
         }
       ]
     }

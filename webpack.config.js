@@ -1,12 +1,15 @@
 const {wcf} = require('@systemlight/webpack-config')
-const {mockServer} = require('@systemlight/webpack-config-mockserver')
 
 module.exports = wcf({
   buildOptions: {
-    enableFriendly: true,
-    emitHtml: true,
     enableMock: true,
-    mockServer: mockServer,
-    postcss: true
+    enablePostcss: true
+  },
+  buildConfigCallback(config) {
+    config.value = {
+      devServer: {
+        open: false
+      }
+    }
   }
 })

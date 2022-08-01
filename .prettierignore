@@ -10,6 +10,7 @@ assets/
 *.css
 *.scss
 *.less
+*.styl
 
 *.toml
 *.md
