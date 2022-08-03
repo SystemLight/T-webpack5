@@ -16,6 +16,7 @@
   ],
   "rules": {
     "plugin/declaration-block-no-ignored-properties": true,
+
     "no-empty-source": null,
     "selector-list-comma-newline-after": null,
     "indentation": 2,

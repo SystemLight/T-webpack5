@@ -15,7 +15,7 @@ module.exports = function (api) {
 
   let presets = [
     [
-      '@babel/env',
+      '@babel/preset-env', // 可简写：@babel/env
       {
         debug: false,
         modules: false,

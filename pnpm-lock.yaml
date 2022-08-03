@@ -55,9 +55,7 @@ specifiers:
   webpack-dev-server: ^4.9.2
 
 dependencies:
-  '@babel/runtime-corejs3': 7.18.3
   axios: 0.27.2
-  core-js: 3.23.1
 
 devDependencies:
   '@babel/cli': 7.17.10_@babel+core@7.18.5
@@ -67,6 +65,7 @@ devDependencies:
   '@babel/plugin-transform-runtime': 7.18.5_@babel+core@7.18.5
   '@babel/preset-env': 7.18.2_@babel+core@7.18.5
   '@babel/preset-react': 7.18.6_@babel+core@7.18.5
+  '@babel/runtime-corejs3': 7.18.3
   '@commitlint/cli': 17.0.2
   '@commitlint/config-conventional': 17.0.2
   '@rollup/plugin-commonjs': 22.0.1_rollup@2.77.2
@@ -75,6 +74,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.28.0_7yumg2qjgbp7maccqlfhx2vudu
   '@typescript-eslint/parser': 5.28.0_ud6rd4xtew5bv4yhvkvu24pzm4
   babel-loader: 8.2.5_te6ollfzjcco6mbxjl755ucqke
+  core-js: 3.23.1
   css-loader: 6.7.1_webpack@5.73.0
   eslint: 8.17.0
   eslint-plugin-react: 7.30.1_eslint@8.17.0
@@ -1488,7 +1488,7 @@ packages:
     dependencies:
       core-js-pure: 3.23.1
       regenerator-runtime: 0.13.9
-    dev: false
+    dev: true
 
   /@babel/runtime/7.18.3:
     resolution: {integrity: sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==}
@@ -3446,12 +3446,12 @@ packages:
   /core-js-pure/3.23.1:
     resolution: {integrity: sha512-3qNgf6TqI3U1uhuSYRzJZGfFd4T+YlbyVPl+jgRiKjdZopvG4keZQwWZDAWpu1UH9nCgTpUzIV3GFawC7cJsqg==}
     requiresBuild: true
-    dev: false
+    dev: true
 
   /core-js/3.23.1:
     resolution: {integrity: sha512-wfMYHWi1WQjpgZNC9kAlN4ut04TM9fUTdi7CqIoTVM7yaiOUQTklOzfb+oWH3r9edQcT3F887swuVmxrV+CC8w==}
     requiresBuild: true
-    dev: false
+    dev: true
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -7153,6 +7153,7 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
+    dev: true
 
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
