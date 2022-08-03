@@ -1,5 +1,5 @@
 module.exports = function (api) {
-  api.assertVersion('^7.15')
+  api.assertVersion('~7')
   api.cache(true)
 
   const packageJson = require('./package.json')
