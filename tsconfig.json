@@ -1,14 +1,14 @@
 {
   "include": [
-    "src/**/*",
-    "types/**/*",
-    "tests/**/*"
+    "packages/*/src/**/*",
+    "packages/*/types/**/*",
+    "packages/*/tests/**/*"
   ],
   "exclude": [
-    "src/assets/**/*",
-    "src/styles/**/*",
-    "node_modules/**/*",
-    "**/*.spec.ts"
+    "packages/*/src/assets/**/*",
+    "packages/*/src/styles/**/*",
+    "packages/*/node_modules/**/*",
+    "packages/**/*.spec.ts"
   ],
   "compilerOptions": {
     "target": "ESNext",
