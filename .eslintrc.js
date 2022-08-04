@@ -4,23 +4,11 @@ const fs = require('fs')
 class EslintRecommendConfig {
   /**
    * https://eslint.org/docs/user-guide/configuring/
-   * @param {any?} options
    */
-  constructor(options) {
-    let cwd = process.cwd()
-
-    let _options = {
-      cwd: cwd,
-      packageJSON: require(path.join(cwd, 'package.json')),
-
-      isTsProject: fs.existsSync(path.resolve(cwd, 'tsconfig.json'))
-    }
-    Object.assign(_options, options)
-
-    this.cwd = _options.cwd
-
-    this.isTsProject = _options.isTsProject
-    this.packageJSON = _options.packageJSON
+  constructor() {
+    this.cwd = process.cwd()
+    this.isTsProject = fs.existsSync(path.resolve(this.cwd, 'tsconfig.json'))
+    this.packageJSON = require(path.join(this.cwd, 'package.json'))
     this.dependencies = Object.keys({
       // 项目依赖库数组，用于判定包含什么框架
       ...this.packageJSON['devDependencies'],
@@ -144,6 +132,7 @@ class EslintRecommendConfig {
   buildRules() {
     this._config.rules = {}
 
+    // 通用规则
     const commonRule = {
       'require-jsdoc': 'off',
       'no-control-regex': 'off',
@@ -151,6 +140,7 @@ class EslintRecommendConfig {
       'linebreak-style': 'off',
       'max-len': 'off',
       'no-unused-vars': 'off',
+
       quotes: ['error', 'single'],
       semi: ['error', 'never'],
       'arrow-parens': ['error', 'always'],
@@ -190,6 +180,7 @@ class EslintRecommendConfig {
     Object.assign(this._config.rules, commonRule)
 
     if (this.isTsProject) {
+      // typescript规则
       const typescriptRule = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-var-requires': 'off',
@@ -199,11 +190,13 @@ class EslintRecommendConfig {
     }
 
     if (this.isInclude('react')) {
+      // react规则
       const reactRule = {}
       Object.assign(this._config.rules, reactRule)
     }
 
     if (this.isInclude('vue')) {
+      // vue规则
       const vueRule = {
         'vue/multi-word-component-names': 'off'
       }
