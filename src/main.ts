@@ -1,8 +1,8 @@
-import axios from 'axios'
+import {createApp} from 'vue'
 
 import '@/global.scss'
+import router from '@/route'
+import store from '@/store'
+import App from '@/App.vue'
 
-// mockjs api
-axios.post('/api/demo').then(({data}) => {
-  console.log('hello', data)
-})
+createApp(App).use(router).use(store).mount('#root')
