@@ -41,12 +41,12 @@
 - [rollup](https://github.com/rollup/rollup)
 - [vite](https://vitejs.dev/config/)
 
-## 同类项目
-
-- [createVue](https://github.com/zxpsuper/createVue)
-
 ### Issue
 
 - macOS下husky不执行？
 
 > 设置权限使用 `chmod 777 .husky/*`
+
+## 同类项目
+
+- [createVue](https://github.com/zxpsuper/createVue)
