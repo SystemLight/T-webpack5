@@ -5,8 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "lint:prettier": "prettier \"packages/*/src/**/*.{vue,js,jsx,ts,tsx}\" -w",
-    "lint:eslint-check": "eslint packages/*/src/ --ext .vue,.jsx,.js,.ts,.tsx",
-    "lint:eslint": "eslint packages/*/src/ --ext .vue,.jsx,.js,.ts,.tsx --fix",
+    "lint:eslint-check": "eslint \"packages/*/src/**.{vue,jsx,js,ts,tsx}\" --ext .vue,.jsx,.js,.ts,.tsx",
+    "lint:eslint": "eslint \"packages/*/src/**.{vue,jsx,js,ts,tsx}\" --ext .vue,.jsx,.js,.ts,.tsx --fix",
     "lint:stylelint-prettier-check": "stylelint-config-prettier-check",
     "lint:stylelint": "stylelint \"packages/*/src/**/*.{vue,css,s[ac]ss}\" --fix"
   },
