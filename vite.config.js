@@ -10,5 +10,9 @@ export default defineConfig({
       '@': path.resolve('src/')
     }
   },
-  plugins: [vue()]
+  plugins: [
+    vue({
+      reactivityTransform: true
+    })
+  ]
 })

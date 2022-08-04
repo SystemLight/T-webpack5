@@ -146,11 +146,13 @@ class EslintRecommendConfig {
 
     const commonRule = {
       'require-jsdoc': 'off',
-      'no-control-regex': 'off',
-      'no-invalid-this': 'off',
       'linebreak-style': 'off',
       'max-len': 'off',
+      'no-control-regex': 'off',
+      'no-invalid-this': 'off',
       'no-unused-vars': 'off',
+      'no-undef': 'off',
+
       quotes: ['error', 'single'],
       semi: ['error', 'never'],
       'arrow-parens': ['error', 'always'],

@@ -5,7 +5,5 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from 'vue'
-
-let msg = ref('Vue3')
+let msg = $ref('Vue3')
 </script>

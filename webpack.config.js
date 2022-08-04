@@ -15,5 +15,16 @@ module.exports = wcf({
         open: false
       }
     }
+
+    let vueLoaderIndex = this._config.module.rules.findIndex((v) => v.use[0] === 'vue-loader')
+    this._config.module.rules[vueLoaderIndex].use.pop()
+    this._config.module.rules[vueLoaderIndex].use = [
+      {
+        loader: 'vue-loader',
+        options: {
+          reactivityTransform: true
+        }
+      }
+    ]
   }
 })
