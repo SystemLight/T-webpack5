@@ -1,18 +1,26 @@
-# webpack5-kiva
+# @systemlight/webpack5-vue
 
 > Front end development template based on webpack5.
 
-## 文档
+## 依赖
 
-### 开发配置
+- node@16.15.0
+- pnpm@7.8.0
 
-#### Basic
+## 技术栈
+
+### Library
+
+- [axios](https://www.axios-http.cn/docs/intro)
+- [tailwindcss](https://www.tailwindcss.cn/docs/container)
+
+### Basic
 
 - [package.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
 - [browserslist](https://github.com/browserslist/browserslist)
 - [.gitignore](https://github.com/github/gitignore)
 
-#### lint
+### lint
 
 - [husky](https://github.com/typicode/husky)
 - [lint-staged](https://github.com/okonet/lint-staged)
@@ -28,25 +36,33 @@
   - [ ] 支持less
   - [ ] 支持stylus
 
-#### css preprocessing
+### css preprocessing
 
 - [sass](https://sass-lang.com/documentation/)
 - [postcss](https://www.postcss.com.cn/)
 
-#### package
+### package
 
 - [babel](https://babel.docschina.org/docs/en/usage/)
 - [typescript](https://www.tslang.cn/docs/handbook/tsconfig-json.html)
 - [webpack](https://webpack.js.org/configuration/)
-- [rollup](https://github.com/rollup/rollup)
-- [vite](https://vitejs.dev/config/)
+
+## Issue
+
+macOS下husky不执行？
+
+> 设置权限使用 `chmod 777 .husky/*`
+
+---
+
+windows环境powershell下pnpm不执行问题？
+
+> 管理员模式打开powershell运行如下命令
+
+```shell
+Set-ExecutionPolicy RemoteSigned
+```
 
 ## 同类项目
 
 - [createVue](https://github.com/zxpsuper/createVue)
-
-### Issue
-
-- macOS下husky不执行？
-
-> 设置权限使用 `chmod 777 .husky/*`

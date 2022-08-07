@@ -3,5 +3,5 @@
     "prettier -w",
     "eslint --fix"
   ],
-  "*.{s[ac]ss,css}": "stylelint --fix"
+  "*.{css,s[ac]ss}": "stylelint --fix"
 }
