@@ -11,6 +11,9 @@
 
 ### Library
 
+- [vue3](https://staging-cn.vuejs.org/api/)
+- [vuex](https://vuex.vuejs.org/zh/api/)
+- [vue-router](https://router.vuejs.org/zh/api/)
 - [axios](https://www.axios-http.cn/docs/intro)
 - [tailwindcss](https://www.tailwindcss.cn/docs/container)
 

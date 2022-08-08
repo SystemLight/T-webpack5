@@ -1,11 +1,14 @@
 module.exports = [
   {
-    url: '/api/demo',
+    url: '/api/login',
     type: 'post',
-    response: (req) => {
+    response: () => {
       return {
-        code: 200,
-        msg: 'ok'
+        code: 50008,
+        msg: 'error',
+        data: {
+          token: 'hello token'
+        }
       }
     }
   }
