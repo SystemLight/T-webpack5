@@ -1,15 +1,13 @@
-import {log} from './log'
-
-interface RequestErrorMessage {
-  code: number
-  type: 'error' | 'login'
-  message: string
-}
+const TOKEN_KEY = 'token-key'
 
 export function getToken() {
-  return ''
+  return localStorage.getItem(TOKEN_KEY)
 }
 
-export function handleRequestMessage(msg: RequestErrorMessage) {
-  log('handleRequestMessage', msg.message)
+export function setToken(value) {
+  localStorage.setItem(TOKEN_KEY, value)
+}
+
+export function removeToken() {
+  localStorage.removeItem(TOKEN_KEY)
 }

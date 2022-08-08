@@ -13,15 +13,14 @@
 
 <script lang="ts" setup>
 import {useStore} from '@/store/hook'
-import {reqLogin} from '@/api'
+import {reqErr} from '@/api'
 
 let store = useStore()
 let token = $computed(() => store.state.user.token)
 
 function handleClick() {
-  reqLogin().then(({data}) => {
+  reqErr().then(({data}) => {
     console.log(data)
-    store.commit('user/setToken', data.data.token)
   })
 }
 </script>

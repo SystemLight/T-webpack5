@@ -1,7 +1,7 @@
 import axios from 'axios'
 import store from '@/store'
 
-import {getToken, handleRequestMessage} from './auth'
+import {getToken} from './auth'
 import {log} from './log'
 
 let devURL = '/api' // 开发环境请求前缀
@@ -14,7 +14,7 @@ const service = axios.create({
 
 service.interceptors.request.use(
   (config) => {
-    if (store.state.user.token) {
+    if (getToken()) {
       // https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization
       config.headers = {
         Authorization: `Bearer ${getToken()}`,
@@ -34,7 +34,7 @@ service.interceptors.response.use(
     const data = response.data
 
     if (data.code !== 20000) {
-      handleRequestMessage({
+      handleResponseMessage({
         code: data.code,
         message: data.message || 'Error',
         type: 'error'
@@ -44,7 +44,7 @@ service.interceptors.response.use(
       // 50012: Other clients logged in;
       // 50014: Token expired;
       if (data.code === 50008 || data.code === 50012 || data.code === 50014) {
-        handleRequestMessage({
+        handleResponseMessage({
           code: data.code,
           message: 'You have been logged out, you can cancel to stay on this page, or log in again',
           type: 'login'
@@ -61,5 +61,22 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
+
+interface ResponseErrorMessage {
+  code: number
+  type: 'error' | 'login'
+  message: string
+}
+
+export function handleResponseMessage(msg: ResponseErrorMessage) {
+  log('handleRequestMessage', msg.message)
+
+  // 登陆性错误调回主页
+  if (msg.type === 'login') {
+    store.commit('user/resetToken')
+    location.replace('/')
+    return
+  }
+}
 
 export default service

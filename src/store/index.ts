@@ -3,7 +3,6 @@ import type {ModuleTree, MutationTree, ActionTree} from 'vuex'
 import type {GetterTree} from 'vuex'
 
 import type {AllState, RootState} from './interface'
-
 const isProduction = process.env.NODE_ENV === 'production'
 const plugins = isProduction ? [] : [createLogger({})]
 
