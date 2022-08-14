@@ -1,14 +1,13 @@
 {
-  "name": "t-webpack5",
-  "version": "2.0.0",
+  "name": "@systemlight/webpack5-monorepo",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "lint:prettier": "prettier -w \"packages/*/src/**/*.js\"",
-    "lint:eslint-check": "eslint --ext .js \"packages/*/src/**/*.js\"",
-    "lint:eslint": "eslint --fix --ext .js \"packages/*/src/**/*.js\"",
-    "lint:stylelint-prettier-check": "stylelint-config-prettier-check",
-    "lint:stylelint": "stylelint --fix \"packages/*/src/**/*.{css,s[ac]ss}\""
+    "lint:prettier": "prettier -w \"packages/*/src/**/*.{js,}\"",
+    "lint:eslint": "eslint --fix --ext .js \"packages/*/src/**/*.{js,}\"",
+    "lint:stylelint": "stylelint --fix \"packages/*/src/**/*.{css,s[ac]ss}\"",
+    "lint": "run-s \"lint:prettier\" \"lint:eslint\" \"lint:stylelint\""
   },
   "workspaces": [
     "packages/*"
@@ -32,16 +31,15 @@
     "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.9",
     "@babel/plugin-proposal-decorators": "^7.18.9",
-    "@babel/plugin-transform-runtime": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
-    "@babel/runtime-corejs3": "^7.18.3",
     "@commitlint/cli": "^17.0.2",
     "@commitlint/config-conventional": "^17.0.2",
-    "@systemlight/fabric": "^5.1.2",
+    "@systemlight/fabric": "^5.1.5",
     "core-js": "^3.23.1",
     "eslint": "^8.17.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.14",
     "postcss-preset-env": "^7.7.1",
     "prettier": "^2.7.0",
@@ -51,7 +49,6 @@
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^4.0.0",
-    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
-    "typescript": "^4.7.3"
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0"
   }
 }
