@@ -9,11 +9,11 @@ module.exports = wcf({
     // config.devtool(false)
 
     // 使用vue3实验特性
-    // config.module
-    //   .rule('vue')
-    //   .use('vue-loader')
-    //   .tap(() => ({
-    //     reactivityTransform: true
-    //   }))
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(() => ({
+        reactivityTransform: true
+      }))
   }
 })
