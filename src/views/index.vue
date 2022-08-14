@@ -20,7 +20,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 let msg = $ref('Vue3')
 </script>
 

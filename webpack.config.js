@@ -1,5 +1,4 @@
 const {wcf} = require('@systemlight/webpack-config')
-const {AutoRouteWebpackPlugin, vueRoutesRender} = require('@systemlight/auto-route-webpack-plugin')
 
 module.exports = wcf({
   enablePostcss: true, // 为了让tailwindcss起效果
@@ -7,7 +6,7 @@ module.exports = wcf({
   buildConfigCallback(config) {
     config.devServer.open(false)
 
-    config.devtool(false)
+    // config.devtool(false)
 
     // 使用vue3实验特性
     config.module
@@ -16,15 +15,5 @@ module.exports = wcf({
       .tap(() => ({
         reactivityTransform: true
       }))
-
-    // 自动路由插件
-    config.plugin('AutoRouteWebpackPlugin').use(AutoRouteWebpackPlugin, [
-      {
-        targetPath: './src/views',
-        importPath: '@/views',
-        loaderTest: /router/,
-        routesRender: vueRoutesRender
-      }
-    ])
   }
 })

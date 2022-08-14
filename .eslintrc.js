@@ -1,7 +1,6 @@
 module.exports = {
-  extends: [require.resolve('@systemlight/fabric/dist/eslint')],
+  extends: [require.resolve('@systemlight/fabric/dist/vueEslint')],
   rules: {
-    '@typescript-eslint/no-empty-interface': 'off',
     'no-undef': 'off'
   }
 }

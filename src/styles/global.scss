@@ -1,3 +1,48 @@
+@use "sass:math";
+
+@use "./var.scss";
+@use "./mixin.scss";
+@use "./func.scss";
+@use "./utils.scss";
+@use "./media.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, "Times New Roman", "Microsoft YaHei", SimHei, -apple-system, BlinkMacSystemFont,
+    "WenQuanYi Micro Hei", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  // 响应式字体
+  @include mixin.response-font(true);
+}
+
+body {
+  background: var.$bg-body;
+  font-size: func.rpx(16);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+button {
+  appearance: none;
+}
+
+.clearfix {
+  @include mixin.clearfix;
+}
+
+@include utils.content;
+@include media.content;

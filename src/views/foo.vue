@@ -11,9 +11,10 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import {useStore} from '@/store/hook'
-import {reqErr} from '@/api'
+<script setup>
+import {useStore} from 'vuex'
+
+import {reqErr} from '@/api/auth'
 
 let store = useStore()
 let token = $computed(() => store.state.user.token)
