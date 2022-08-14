@@ -12,8 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import {useStore} from 'vuex'
-
+import {useStore} from '@/store/hook'
 import {reqErr} from '@/api/auth'
 
 let store = useStore()
