@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import {useRoute, useRouter} from 'vue-router'
 
-import {reqLogin} from '@/api'
+import {reqLogin} from '@/api/auth'
 import {useStore} from '@/store/hook'
 
 const store = useStore()
