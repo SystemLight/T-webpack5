@@ -1,4 +1,6 @@
+import '@/styles/tailwind.css'
 import '@/styles/global.scss'
+import '@/styles/themes.scss'
 
 import {createApp} from 'vue'
 
