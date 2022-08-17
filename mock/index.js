@@ -1,6 +1,6 @@
 const mocks = [
   // @mockjs-route
-  ...require('./demo'),
+  ...require('./auth'),
 ]
 
 module.exports = mocks

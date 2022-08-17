@@ -1,15 +1,8 @@
 import request from '@/utils/request'
 
-export function reqLogin() {
+export function login() {
   return request({
     url: '/login',
-    method: 'POST'
-  })
-}
-
-export function reqErr() {
-  return request({
-    url: '/err',
     method: 'POST'
   })
 }

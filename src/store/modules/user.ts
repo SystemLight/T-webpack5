@@ -1,4 +1,4 @@
-import type {Module, MutationTree, ActionTree} from 'vuex'
+import type {Module, MutationTree} from 'vuex'
 
 import type {RootState, UserState} from '@/store/interface'
 import {getToken, setToken, removeToken} from '@/utils/auth'
@@ -12,19 +12,16 @@ const mutations: MutationTree<UserState> = {
     state.token = payload
     setToken(payload)
   },
-  resetToken(state) {
+  removeToken(state) {
     state.token = null
     removeToken()
   }
 }
 
-const actions: ActionTree<UserState, RootState> = {}
-
 const module: Module<UserState, RootState> = {
   namespaced: true,
   state,
-  mutations,
-  actions
+  mutations
 }
 
 export default module

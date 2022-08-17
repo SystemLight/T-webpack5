@@ -1,7 +1,7 @@
 <template>
   <div>
-    foo
-    {{ token }}
+    <div>foo</div>
+    <div>{{ token }}</div>
     <div
       class="w-[100px] h-[100px] bg-blue-500"
       @click="handleClick"
@@ -12,15 +12,17 @@
 </template>
 
 <script lang="ts" setup>
-import {useStore} from '@/store/hook'
-import {reqErr} from '@/api/auth'
+import {computed, reactive} from 'vue'
+
+import {useStore} from '@/store/composables'
 
 let store = useStore()
-let token = $computed(() => store.state.user.token)
+let a = reactive({value: 12})
+let token = a.value
 
 function handleClick() {
-  reqErr().then(({data}) => {
-    console.log(data)
-  })
+  a.value = 323
+  // store.commit('user/setToken', 'token ' + new Date().getTime())
+  console.log('click')
 }
 </script>

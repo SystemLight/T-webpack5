@@ -4,6 +4,12 @@ import store from '@/store'
 import {getToken} from './auth'
 import {log} from './log'
 
+interface ResponseErrorMessage {
+  code: number
+  type: 'error' | 'login'
+  message: string
+}
+
 let devURL = '/api' // 开发环境请求前缀
 let proURL = '/api' // 生产环境请求前缀
 
@@ -61,12 +67,6 @@ service.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-
-interface ResponseErrorMessage {
-  code: number
-  type: 'error' | 'login'
-  message: string
-}
 
 export function handleResponseMessage(msg: ResponseErrorMessage) {
   log('handleRequestMessage', msg.message)

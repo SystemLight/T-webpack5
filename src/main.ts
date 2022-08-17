@@ -3,7 +3,7 @@ import '@/styles/global.scss'
 import {createApp} from 'vue'
 
 import store from '@/store'
-import {key} from '@/store/hook'
+import {key} from '@/store/composables'
 import router from '@/router'
 import App from '@/App.vue'
 

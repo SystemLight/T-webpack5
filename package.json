@@ -4,17 +4,17 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "lint:prettier": "prettier -w \"src/**/*.{vue,ts,tsx}\"",
-    "lint:eslint": "eslint --fix --ext .vue,.ts,.tsx \"src/**/*.{vue,ts,tsx}\"",
+    "lint:prettier": "prettier -w \"src/**/*.{vue,ts}\"",
+    "lint:eslint": "eslint --fix --ext .vue,.ts,.tsx \"src/**/*.{vue,ts}\"",
     "lint:stylelint": "stylelint \"src/**/*.{vue,css,s[ac]ss}\" --fix",
     "build:webpack": "webpack --mode production",
     "build:webpack-dev": "webpack --mode development",
     "dev:webpack-serve": "webpack serve --mode development",
     "dev:webpack-analyze": "webpack --mode development --analyze",
-    "dev:plop": "plop",
-    "lint": "run-s \"lint:prettier\" \"lint:eslint\" \"lint:stylelint\"",
-    "build": "npm run build:webpack",
-    "serve": "npm run dev:webpack-serve"
+    "plop": "plop",
+    "lint": "run-s \"lint:*\"",
+    "dev": "npm run dev:webpack-serve",
+    "build": "npm run build:webpack"
   },
   "description": "Front end development template based on webpack5.",
   "main": "src/main.ts",
