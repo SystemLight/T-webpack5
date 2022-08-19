@@ -4,12 +4,6 @@ import store from '@/store'
 import {getToken} from './auth'
 import {log} from './log'
 
-interface ResponseErrorMessage {
-  code: number
-  type: 'error' | 'login'
-  message: string
-}
-
 let devURL = '/api' // 开发环境请求前缀
 let proURL = '/api' // 生产环境请求前缀
 
@@ -37,29 +31,19 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (response) => {
-    const data = response.data
+    let data = response.data
 
+    // 自定义返回码
     if (data.code !== 20000) {
-      handleResponseMessage({
-        code: data.code,
-        message: data.message || 'Error',
-        type: 'error'
-      })
+      handleError(data)
 
-      // 50008: Illegal token;
-      // 50012: Other clients logged in;
-      // 50014: Token expired;
       if (data.code === 50008 || data.code === 50012 || data.code === 50014) {
-        handleResponseMessage({
-          code: data.code,
-          message: 'You have been logged out, you can cancel to stay on this page, or log in again',
-          type: 'login'
-        })
+        handleTokenError(data)
       }
 
-      return Promise.reject(new Error(data.message || 'Error'))
+      return Promise.reject(new Error(data.msg || 'Error'))
     } else {
-      return response
+      return data
     }
   },
   (error) => {
@@ -68,15 +52,14 @@ service.interceptors.response.use(
   }
 )
 
-export function handleResponseMessage(msg: ResponseErrorMessage) {
-  log('handleRequestMessage', msg.message)
+function handleError(msg) {
+  log('handleError', msg)
+}
 
-  // 登陆性错误调回主页
-  if (msg.type === 'login') {
-    store.commit('user/resetToken')
-    location.replace('/')
-    return
-  }
+function handleTokenError(msg) {
+  log('handleTokenError', msg)
+  store.commit('user/removeToken')
+  location.replace('/')
 }
 
 export default service
