@@ -1,4 +1,5 @@
-import axios from 'axios'
+import type {AxiosRequestConfig} from 'axios'
+import axios, {Axios} from 'axios'
 
 import store from '@/store'
 import {getToken} from './auth'
@@ -7,10 +8,28 @@ import {log} from './log'
 let devURL = '/api' // 开发环境请求前缀
 let proURL = '/api' // 生产环境请求前缀
 
+export interface CustomResponse<T = any> {
+  code: number
+  msg: string
+  data: T
+}
+
+export interface ErrorData {
+  errors: {msg: string}[]
+}
+
+export type CustomErrorResponse = CustomResponse<ErrorData>
+
+export interface AxiosWrapInstance extends Axios {
+  (config: AxiosRequestConfig): Promise<CustomResponse>
+
+  (url: string, config?: AxiosRequestConfig): Promise<CustomResponse>
+}
+
 const service = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? devURL : proURL,
   timeout: 5000
-})
+}) as any as AxiosWrapInstance
 
 service.interceptors.request.use(
   (config) => {
@@ -52,12 +71,12 @@ service.interceptors.response.use(
   }
 )
 
-function handleError(msg) {
-  log('handleError', msg)
+function handleError({data}: CustomErrorResponse) {
+  log('handleError', data.errors)
 }
 
-function handleTokenError(msg) {
-  log('handleTokenError', msg)
+function handleTokenError({data}: CustomErrorResponse) {
+  log('handleTokenError', data.errors)
   store.commit('user/removeToken')
   location.replace('/')
 }

@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "lint:prettier": "prettier -w \"src/**/*.{vue,ts}\"",
-    "lint:eslint": "eslint --fix --ext .vue,.ts,.tsx \"src/**/*.{vue,ts}\"",
+    "lint:eslint": "eslint --fix --ext .vue,.ts \"src/**/*.{vue,ts}\"",
     "lint:stylelint": "stylelint \"src/**/*.{vue,css,s[ac]ss}\" --fix",
     "build:webpack": "webpack --mode production",
     "build:webpack-dev": "webpack --mode development",
@@ -13,7 +13,7 @@
     "dev:webpack-analyze": "webpack --mode development --analyze",
     "plop": "plop",
     "lint": "run-s \"lint:*\"",
-    "dev": "npm run dev:webpack-serve",
+    "serve": "npm run dev:webpack-serve",
     "build": "npm run build:webpack"
   },
   "description": "Front end development template based on webpack5.",
@@ -40,7 +40,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@systemlight/fabric": "^5.1.5",
-    "@systemlight/webpack-config": "^6.0.1",
+    "@systemlight/webpack-config": "^6.1.0",
     "@types/node": "^18.6.4",
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",

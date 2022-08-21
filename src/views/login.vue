@@ -19,7 +19,7 @@ const route = useRoute()
 
 function handleClick() {
   login().then(({data}) => {
-    store.commit('user/setToken', data.data.token)
+    store.commit('user/setToken', data.token)
     router.replace((route.query['redirect'] as string) || '/')
   })
 }

@@ -8,7 +8,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@systemlight/fabric': ^5.1.5
-  '@systemlight/webpack-config': ^6.0.1
+  '@systemlight/webpack-config': ^6.1.0
   '@types/node': ^18.6.4
   '@typescript-eslint/eslint-plugin': ^5.32.0
   '@typescript-eslint/parser': ^5.32.0
@@ -65,7 +65,7 @@ devDependencies:
   '@commitlint/cli': 17.0.3
   '@commitlint/config-conventional': 17.0.3
   '@systemlight/fabric': 5.1.5_h4hpt6xat6ordyhyllhzkdnwe4
-  '@systemlight/webpack-config': 6.0.1_2wasnmv6h6mfn3iufknej2xibu
+  '@systemlight/webpack-config': 6.1.0_2wasnmv6h6mfn3iufknej2xibu
   '@types/node': 18.6.4
   '@typescript-eslint/eslint-plugin': 5.32.0_iosr3hrei2tubxveewluhu5lhy
   '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
@@ -94,7 +94,7 @@ devDependencies:
   stylelint-config-recommended-vue: 1.4.0_5rxrxgs7sjazj2ve56ds3kmipi
   stylelint-config-standard-scss: 4.0.0_cujuozyz774mlknuvi23rtftku
   stylelint-declaration-block-no-ignored-properties: 2.5.0_stylelint@14.9.1
-  tailwindcss: 3.1.8
+  tailwindcss: 3.1.8_postcss@8.4.16
   ts-loader: 9.3.1_xnp4kzegbjokq62cajex2ovgkm
   typescript: 4.7.4
   vue-eslint-parser: 9.0.3_eslint@8.21.0
@@ -1746,8 +1746,8 @@ packages:
       - supports-color
     dev: true
 
-  /@systemlight/webpack-config/6.0.1_2wasnmv6h6mfn3iufknej2xibu:
-    resolution: {integrity: sha512-/XzfUC5xw6bC9jTNNlNtcTw034UYP/2UAt56LBE69upQ3DUf/22ZzUaFjGV2mINCZ4uMgrlFUovZoEMuORiVHA==}
+  /@systemlight/webpack-config/6.1.0_2wasnmv6h6mfn3iufknej2xibu:
+    resolution: {integrity: sha512-Cai0444EMlx5jnyhjOTIvdqSMzGmckQhX/HmnwCKxdlg/3ca88x456Tf8RPOprIwym8d4hEzYJacTG2KZDth/g==}
     engines: {node: '>=16.15.0'}
     peerDependencies:
       babel-loader: '*'
@@ -1798,6 +1798,7 @@ packages:
       vue-loader: 17.0.0_webpack@5.74.0
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-chain: 6.5.1
+      webpack-merge: 5.8.0
       webpackbar: 5.0.2_webpack@5.74.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -7512,10 +7513,12 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
