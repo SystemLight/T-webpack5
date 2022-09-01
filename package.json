@@ -87,6 +87,8 @@
   },
   "sideEffects": [
     "*.css",
-    "*.s[ac]ss"
+    "*.s[ac]ss",
+    "*.less",
+    "*.styl"
   ]
 }

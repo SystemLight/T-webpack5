@@ -9,8 +9,9 @@ node_modules/
 *.jpg
 
 *.css
-*.scss
+*.s[ac]ss
 *.less
+*.styl
 
 *.toml
 *.md

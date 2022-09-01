@@ -17,3 +17,9 @@ windows环境powershell下pnpm不执行问题？
 ```shell
 Set-ExecutionPolicy RemoteSigned
 ```
+
+---
+
+如何局部忽略prettier格式化？
+
+> 参考：[链接](https://prettier.io/docs/en/ignore.html#javascript)
