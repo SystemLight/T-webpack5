@@ -1,3 +1,3 @@
 module.exports = {
-  extends: [require.resolve('@systemlight/fabric/dist/reactEslint')]
+  extends: [require.resolve('@systemlight/fabric/dist/tsReactEslint')]
 }
