@@ -21,7 +21,9 @@
 </template>
 
 <script setup>
-let msg = $ref('Vue3')
+import {ref} from 'vue'
+
+let msg = ref('Vue3')
 </script>
 
 <style lang="scss" scoped>

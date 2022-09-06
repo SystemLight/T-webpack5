@@ -42,7 +42,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@systemlight/fabric": "^5.1.5",
-    "@systemlight/webpack-config": "^6.0.1",
+    "@systemlight/webpack-config": "^6.2.3",
     "babel-loader": "^8.2.5",
     "core-js": "^3.24.1",
     "css-loader": "^6.7.1",

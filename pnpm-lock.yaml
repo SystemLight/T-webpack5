@@ -10,7 +10,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@systemlight/fabric': ^5.1.5
-  '@systemlight/webpack-config': ^6.0.1
+  '@systemlight/webpack-config': ^6.2.3
   axios: ^0.27.2
   babel-loader: ^8.2.5
   core-js: ^3.24.1
@@ -64,7 +64,7 @@ devDependencies:
   '@commitlint/cli': 17.0.3
   '@commitlint/config-conventional': 17.0.3
   '@systemlight/fabric': 5.1.5_7n2djlafn5sgr7axl42lzqu6sm
-  '@systemlight/webpack-config': 6.0.1_kpohenaym7e7hqy6yebwjfc4z4
+  '@systemlight/webpack-config': 6.2.3_kpohenaym7e7hqy6yebwjfc4z4
   babel-loader: 8.2.5_xc6oct4hcywdrbo4ned6ytbybm
   core-js: 3.24.1
   css-loader: 6.7.1_webpack@5.74.0
@@ -90,7 +90,7 @@ devDependencies:
   stylelint-config-recommended-vue: 1.4.0_p3sfza3ylapcvxk5wvhsxfln5e
   stylelint-config-standard-scss: 4.0.0_azcu7ozukcosyoqn57hruaqjcq
   stylelint-declaration-block-no-ignored-properties: 2.5.0_stylelint@14.10.0
-  tailwindcss: 3.1.8
+  tailwindcss: 3.1.8_postcss@8.4.16
   vue-eslint-parser: 9.0.3_eslint@8.22.0
   vue-loader: 17.0.0_webpack@5.74.0
   webpack: 5.74.0_webpack-cli@4.10.0
@@ -1780,8 +1780,8 @@ packages:
       - supports-color
     dev: true
 
-  /@systemlight/webpack-config/6.0.1_kpohenaym7e7hqy6yebwjfc4z4:
-    resolution: {integrity: sha512-/XzfUC5xw6bC9jTNNlNtcTw034UYP/2UAt56LBE69upQ3DUf/22ZzUaFjGV2mINCZ4uMgrlFUovZoEMuORiVHA==}
+  /@systemlight/webpack-config/6.2.3_kpohenaym7e7hqy6yebwjfc4z4:
+    resolution: {integrity: sha512-rm4FtisIWQcEfoDk/NzO4r4h3PETE1mJmIqvxEdHJZ25KCe+6D9ROd/m7hOnng4fLD3j8yuiEUNH5oeTus8+Rg==}
     engines: {node: '>=16.15.0'}
     peerDependencies:
       babel-loader: '*'
@@ -1819,11 +1819,13 @@ packages:
     dependencies:
       '@soda/friendly-errors-webpack-plugin': 1.8.1_webpack@5.74.0
       '@systemlight/webpack-config-mockserver': 6.0.1
+      address: 1.2.0
       babel-loader: 8.2.5_xc6oct4hcywdrbo4ned6ytbybm
       copy-webpack-plugin: 11.0.0_webpack@5.74.0
       css-loader: 6.7.1_webpack@5.74.0
       html-webpack-plugin: 5.5.0_webpack@5.74.0
       mini-css-extract-plugin: 2.6.1_webpack@5.74.0
+      node-forge: 1.3.1
       postcss-loader: 7.0.1_qjv4cptcpse3y5hrjkrbb7drda
       sass-loader: 13.0.2_sass@1.54.4+webpack@5.74.0
       style-loader: 3.3.1_webpack@5.74.0
@@ -1831,6 +1833,7 @@ packages:
       vue-loader: 17.0.0_webpack@5.74.0
       webpack: 5.74.0_webpack-cli@4.10.0
       webpack-chain: 6.5.1
+      webpack-merge: 5.8.0
       webpackbar: 5.0.2_webpack@5.74.0
     transitivePeerDependencies:
       - '@swc/core'
@@ -2303,6 +2306,11 @@ packages:
     resolution: {integrity: sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /address/1.2.0:
+    resolution: {integrity: sha512-tNEZYz5G/zYunxFm7sfhAxkXEuLj3K6BKwv6ZURlsF6yiUQ65z0Q2wZW9L5cPUl9ocofGvXOdFYbFHp0+6MOig==}
+    engines: {node: '>= 10.0.0'}
     dev: true
 
   /aggregate-error/3.1.0:
@@ -7401,10 +7409,12 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.1.8:
+  /tailwindcss/3.1.8_postcss@8.4.16:
     resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

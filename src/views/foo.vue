@@ -13,11 +13,12 @@
 
 <script setup>
 import {useStore} from 'vuex'
+import {computed} from 'vue'
 
 import {reqErr} from '@/api/auth'
 
 let store = useStore()
-let token = $computed(() => store.state.user.token)
+let token = computed(() => store.state.user.token)
 
 function handleClick() {
   reqErr().then(({data}) => {
