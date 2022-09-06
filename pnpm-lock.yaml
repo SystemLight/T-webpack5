@@ -11,7 +11,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@systemlight/fabric': ^5.1.5
-  '@systemlight/webpack-config': ^6.2.1
+  '@systemlight/webpack-config': 6.2.3
   axios: ^0.27.2
   babel-loader: ^8.2.5
   core-js: ^3.24.1
@@ -60,7 +60,7 @@ devDependencies:
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
   '@systemlight/fabric': 5.1.5_zruteyp3z2gbwbfu6bedskvwni
-  '@systemlight/webpack-config': 6.2.1_fxiobcdvcd32z5majf62ive2u4
+  '@systemlight/webpack-config': 6.2.3_fxiobcdvcd32z5majf62ive2u4
   babel-loader: 8.2.5_z22tmofudeh3tyeifpjvwjl5ei
   core-js: 3.25.0
   css-loader: 6.7.1_webpack@5.74.0
@@ -1874,8 +1874,8 @@ packages:
       - supports-color
     dev: true
 
-  /@systemlight/webpack-config/6.2.1_fxiobcdvcd32z5majf62ive2u4:
-    resolution: {integrity: sha512-c/9SAgX5lah6cgCSJakitF8g5Rra/gEoc+AfJzS3JLzsfmptmmiwPBQ8qp0d4fO/tZ0g2CYQg26rSzRsLgXinA==}
+  /@systemlight/webpack-config/6.2.3_fxiobcdvcd32z5majf62ive2u4:
+    resolution: {integrity: sha512-rm4FtisIWQcEfoDk/NzO4r4h3PETE1mJmIqvxEdHJZ25KCe+6D9ROd/m7hOnng4fLD3j8yuiEUNH5oeTus8+Rg==}
     engines: {node: '>=16.15.0'}
     peerDependencies:
       babel-loader: '*'
