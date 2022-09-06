@@ -1,4 +1,4 @@
-# @systemlight/webpack5-vue-ts
+# @systemlight/webpack5-react
 
 > Front end development template based on webpack5.
 
