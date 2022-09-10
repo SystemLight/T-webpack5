@@ -1,5 +1,5 @@
 /**
- * https://tailwindcss.com/docs/installation
+ * https://tailwindcss.com/docs/configuration
  * @type {import('tailwindcss').Config}
  */
 module.exports = {
