@@ -1,20 +1,62 @@
-declare module '*.css' {
+declare module '*.module.css' {
   const classes: {readonly [key: string]: string}
   export default classes
 }
 
-declare module '*.scss' {
+declare module '*.module.scss' {
   const classes: {readonly [key: string]: string}
   export default classes
 }
 
-declare module '*.svg'
-declare module '*.png'
-declare module '*.jpg'
-declare module '*.jpeg'
-declare module '*.gif'
-declare module '*.bmp'
-declare module '*.tiff'
+declare module '*.module.sass' {
+  const classes: {readonly [key: string]: string}
+  export default classes
+}
+
+declare module '*.svg' {
+  import * as React from 'react'
+
+  export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement> & {title?: string}>
+
+  const src: string
+  export default src
+}
+
+declare module '*.png' {
+  const src: string
+  export default src
+}
+
+declare module '*.jpg' {
+  const src: string
+  export default src
+}
+
+declare module '*.jpeg' {
+  const src: string
+  export default src
+}
+
+declare module '*.gif' {
+  const src: string
+  export default src
+}
+
+declare module '*.bmp' {
+  const src: string
+  export default src
+}
+
+declare module '*.tiff' {
+  const src: string
+  export default src
+}
+
+declare namespace NodeJS {
+  interface ProcessEnv {
+    readonly NODE_ENV: 'production' | 'development'
+  }
+}
 
 declare interface WebpackHotModule {
   hot: {
@@ -22,5 +64,4 @@ declare interface WebpackHotModule {
   }
 }
 
-declare let process: any
 declare let module: WebpackHotModule
