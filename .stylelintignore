@@ -3,6 +3,8 @@
 *.ts
 *.tsx
 
+*.jpg
+*.jpeg
 *.png
 *.eot
 *.ttf
