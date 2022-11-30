@@ -1,8 +1,11 @@
+import '@/styles/global.scss'
+import '@/styles/style.scss'
+
 import axios from 'axios'
 
-import '@/global.scss'
+import {sayFoo} from '@/modules/foo'
 
 // mockjs api
 axios.post('/api/demo').then(({data}) => {
-  console.log('hello', data)
+  sayFoo(data)
 })

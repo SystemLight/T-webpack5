@@ -1,7 +1,23 @@
+const path = require('path')
+
 const {wcf} = require('@systemlight/webpack-config')
 
 module.exports = wcf({
-  enablePostcss: true, // 为了让tailwindcss起效果
-  enableMock: true, // 启用mock数据服务
-  open: false
+  enableMock: true,
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /[\\/]modules[\\/]foo/,
+          use: [
+            {
+              loader: path.resolve('./plugins/webpack-demo/loader.js'),
+              options: {}
+            },
+            'ts-loader'
+          ]
+        }
+      ]
+    }
+  }
 })

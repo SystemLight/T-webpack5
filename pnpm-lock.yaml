@@ -7,8 +7,8 @@ specifiers:
   '@babel/runtime-corejs3': ^7.18.3
   '@commitlint/cli': ^17.0.2
   '@commitlint/config-conventional': ^17.0.2
-  '@systemlight/fabric': ^5.1.2
-  '@systemlight/webpack-config': ^6.0.1
+  '@systemlight/fabric': ^5.1.7
+  '@systemlight/webpack-config': ^6.5.2
   '@typescript-eslint/eslint-plugin': ^5.28.0
   '@typescript-eslint/parser': ^5.28.0
   axios: ^0.27.2
@@ -50,8 +50,8 @@ devDependencies:
   '@babel/runtime-corejs3': 7.19.1
   '@commitlint/cli': 17.1.2
   '@commitlint/config-conventional': 17.1.0
-  '@systemlight/fabric': 5.1.5_5qpoqgt4crmkhnzirka62f6t4m
-  '@systemlight/webpack-config': 6.3.1_52qrb3ivh4xngocut7sdh4bjdy
+  '@systemlight/fabric': 5.1.7_5qpoqgt4crmkhnzirka62f6t4m
+  '@systemlight/webpack-config': 6.5.2_52qrb3ivh4xngocut7sdh4bjdy
   '@typescript-eslint/eslint-plugin': 5.38.0_4gkcvl6qsi23tqqawfqgcwtp54
   '@typescript-eslint/parser': 5.38.0_7ilbxdl5iguzcjriqqcg2m5cku
   babel-loader: 8.2.5_rhsdbzevgb5tizdhlla5jsbgyu
@@ -1721,8 +1721,8 @@ packages:
       webpack: 5.74.0_webpack-cli@4.10.0
     dev: true
 
-  /@systemlight/fabric/5.1.5_5qpoqgt4crmkhnzirka62f6t4m:
-    resolution: {integrity: sha512-xIi+Tr31g+XmRYTsD/x1qT30BMY0iuKbQdR/cQ2C5svuN+gCFXuc8b21uuAIPGw4fpz+mjFqigHPj7B560kBqg==}
+  /@systemlight/fabric/5.1.7_5qpoqgt4crmkhnzirka62f6t4m:
+    resolution: {integrity: sha512-/JvbuWsX7VT0kcMJSKRqAuDNYdGi1a5+ssD2+8QhYsVQv4RfnpL2GrBT2MtbPrmSdQ3tzNXucLVlIfbymOwLaA==}
     engines: {node: '>=16.15.0'}
     hasBin: true
     peerDependencies:
@@ -1756,8 +1756,8 @@ packages:
       - supports-color
     dev: true
 
-  /@systemlight/webpack-config/6.3.1_52qrb3ivh4xngocut7sdh4bjdy:
-    resolution: {integrity: sha512-HgwqIOCf47owsZQp2QAhLnjY03GKhSO3FzuiLrGA7G1GDwcRGguV+H/aTXyahxw4Nm86bAVxlinvEFkJ7qq/ag==}
+  /@systemlight/webpack-config/6.5.2_52qrb3ivh4xngocut7sdh4bjdy:
+    resolution: {integrity: sha512-bqI+/Uz3w6+D/LCwN2TvUrZD8ahWUJyorSYGBOpST1VI8lmu0HL6MXYQw381MmVZfeOIAjG+E+lQp62Ue4Fmsw==}
     engines: {node: '>=16.15.0'}
     hasBin: true
     peerDependencies:

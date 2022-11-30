@@ -1,4 +1,5 @@
 module.exports = function (api) {
+  // https://github.com/SystemLight/webpack-config/blob/master/packages/webpack-config/src/index.ts#L962
   api.assertVersion('~7')
   api.cache(true)
 
@@ -11,7 +12,7 @@ module.exports = function (api) {
     comments: true,
     presets: [
       [
-        '@babel/env',
+        '@babel/env', // @babel/preset-transform-runtime
         {
           debug: false,
           modules: false,
@@ -23,7 +24,7 @@ module.exports = function (api) {
     ],
     plugins: [
       [
-        '@babel/plugin-transform-runtime',
+        '@babel/transform-runtime', // @babel/plugin-transform-runtime
         {
           corejs: corejs
         }
