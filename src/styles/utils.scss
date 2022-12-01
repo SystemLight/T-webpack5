@@ -1,0 +1,9 @@
+@use "sass:math";
+
+$color: red;
+
+// sass-migrator 除法迁移工具
+.utils-style {
+  padding: 10 + 10px 10 - 10px 10 * 10px #{math.div(50, 10)}px;
+  color: $color;
+}

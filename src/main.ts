@@ -1,5 +1,4 @@
-import '@/styles/global.scss'
-import '@/styles/style.scss'
+import '@/styles/index.scss'
 
 import axios from 'axios'
 
