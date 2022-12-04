@@ -28,6 +28,12 @@ module.exports = function (api) {
         {
           corejs: corejs
         }
+      ],
+      [
+        './plugins/babel-plugin-demo',
+        {
+          operator: 'warn'
+        }
       ]
     ]
   }

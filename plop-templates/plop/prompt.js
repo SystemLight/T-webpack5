@@ -1,5 +1,6 @@
 /**
  * 基础模板配置文件
+ *
  * @type {import("plop").PlopGeneratorConfig}
  */
 const config = {
@@ -29,6 +30,6 @@ const config = {
             template: `  plop.setGenerator('{{kebabCase name}}-template', require('./plop-templates/{{kebabCase name}}/prompt'))`
         }
     ]
-};
+}
 
-module.exports = config;
+module.exports = config

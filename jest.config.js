@@ -1,6 +1,8 @@
-// https://www.jestjs.cn/docs/configuration
-
-/** @type {import('ts-jest').JestConfigWithTsJest} */
+/**
+ * https://www.jestjs.cn/docs/configuration
+ *
+ * @type {import('ts-jest').JestConfigWithTsJest}
+ * */
 module.exports = {
   preset: 'ts-jest',
   testPathIgnorePatterns: ['/src/', '/dist/'],

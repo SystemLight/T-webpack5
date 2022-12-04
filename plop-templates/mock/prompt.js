@@ -24,6 +24,6 @@ const config = {
         template: `  ...require('./{{kebabCase name}}'),`
       }
     ]
-};
+}
 
-module.exports = config;
+module.exports = config
