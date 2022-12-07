@@ -3,15 +3,14 @@ const t = require('@babel/types')
 const traverse = require('@babel/traverse').default
 const generator = require('@babel/generator').default
 
-function loader(source) {
+function jsLoader(source) {
   let ast = parse(source, {
     sourceType: 'module'
   })
 
   traverse(ast, {
     MemberExpression(path) {
-      let parentPath = path
-      parentPath.traverse({
+      path.traverse({
         Identifier(path) {
           if (
             path.node.name === 'className' &&
@@ -35,4 +34,4 @@ function loader(source) {
   return generator(ast).code
 }
 
-module.exports = loader
+module.exports = jsLoader

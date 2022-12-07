@@ -61,3 +61,8 @@ declare interface WebpackHotModule {
 }
 
 declare let module: WebpackHotModule
+
+declare module '*/demo/foo.css' {
+  const fooCss: any
+  export default fooCss
+}
