@@ -20,7 +20,8 @@ module.exports = function (api) {
           ignoreBrowserslistConfig: false,
           corejs: corejs
         }
-      ]
+      ],
+      '@babel/react' // @babel/preset-react
     ],
     plugins: [
       [

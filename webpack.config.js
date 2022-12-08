@@ -1,6 +1,7 @@
 const path = require('path')
 
 const {wcf} = require('@systemlight/webpack-config')
+const InjectBodyPlugin = require('inject-body-webpack-plugin').default
 
 module.exports = wcf({
   enableMock: true,
@@ -27,7 +28,12 @@ module.exports = wcf({
           ]
         }
       ]
-    }
+    },
+    plugins: [
+      new InjectBodyPlugin({
+        content: '<div id="root"></div>'
+      })
+    ]
   },
   chainWebpack(config) {
     config.module
