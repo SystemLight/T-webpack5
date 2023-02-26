@@ -1757,7 +1757,7 @@
 
 "@systemlight/webpack-config-mockserver@^6.0.1":
   version "6.0.1"
-  resolved "https://registry.npmmirror.com/@systemlight/webpack-config-mockserver/-/webpack-config-mockserver-6.0.1.tgz#10b5bc6849c403ff26b9a66fcc86420ac3974e8c"
+  resolved "https://registry.yarnpkg.com/@systemlight/webpack-config-mockserver/-/webpack-config-mockserver-6.0.1.tgz#10b5bc6849c403ff26b9a66fcc86420ac3974e8c"
   integrity sha512-0Cq8C4tHOXbuYn12P3z52m+pNhsZr5+yunCI+zYnVt57H8k0bsj/e4QmyKdAvM6v4MSzmmA6R78XB69yV+/d0A==
   dependencies:
     body-parser "^1.20.0"
@@ -1765,10 +1765,10 @@
     chokidar "^3.5.3"
     mockjs "^1.1.0"
 
-"@systemlight/webpack-config@^6.5.2":
-  version "6.5.2"
-  resolved "https://registry.npmmirror.com/@systemlight/webpack-config/-/webpack-config-6.5.2.tgz#3ee035c0b380ceff61850feb56e378e6ae328a07"
-  integrity sha512-bqI+/Uz3w6+D/LCwN2TvUrZD8ahWUJyorSYGBOpST1VI8lmu0HL6MXYQw381MmVZfeOIAjG+E+lQp62Ue4Fmsw==
+"@systemlight/webpack-config@^6.6.2":
+  version "6.6.2"
+  resolved "https://registry.npmmirror.com/@systemlight/webpack-config/-/webpack-config-6.6.2.tgz#d9434ab269f251cca3392e30524551e76d2af543"
+  integrity sha512-Zwc0rhSGkR5ok6f2lpeCztvJDUfMledXSHIaJPbPEPMAxdiH6tltVwpD5GlyiH+clwlqmIrwBfURvQwRm2K49w==
   dependencies:
     "@soda/friendly-errors-webpack-plugin" "^1.8.1"
     "@systemlight/webpack-config-mockserver" "^6.0.1"
@@ -1776,6 +1776,7 @@
     chalk "4.1.2"
     commander "^9.4.0"
     copy-webpack-plugin "^11.0.0"
+    dotenv-webpack "^8.0.1"
     html-webpack-plugin "^5.5.0"
     loader-utils "^3.2.0"
     mini-css-extract-plugin "^2.6.1"
@@ -3773,6 +3774,25 @@ dot-prop@^5.1.0:
   integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv-defaults@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmmirror.com/dotenv-defaults/-/dotenv-defaults-2.0.2.tgz#6b3ec2e4319aafb70940abda72d3856770ee77ac"
+  integrity sha512-iOIzovWfsUHU91L5i8bJce3NYK5JXeAwH50Jh6+ARUdLiiGlYWfGw6UkzsYqaXZH/hjE/eCd/PlfM/qqyK0AMg==
+  dependencies:
+    dotenv "^8.2.0"
+
+dotenv-webpack@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.npmmirror.com/dotenv-webpack/-/dotenv-webpack-8.0.1.tgz#6656550460a8076fab20e5ac2eac867e72478645"
+  integrity sha512-CdrgfhZOnx4uB18SgaoP9XHRN2v48BbjuXQsZY5ixs5A8579NxQkmMxRtI7aTwSiSQcM2ao12Fdu+L3ZS3bG4w==
+  dependencies:
+    dotenv-defaults "^2.0.2"
+
+dotenv@^8.2.0:
+  version "8.6.0"
+  resolved "https://registry.npmmirror.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
+  integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
 
 duplexer@^0.1.2:
   version "0.1.2"

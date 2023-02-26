@@ -9,6 +9,7 @@ import 'dayjs/locale/zh-cn'
 import App from '@/App'
 
 dayjs.locale('zh-cn')
-
-const root = createRoot(document.getElementById('root')!)
+console.log(process.env.AUTHOR)
+console.log(process.env.MODE)
+const root = createRoot(document.getElementById('app')!)
 root.render(<App/>)
