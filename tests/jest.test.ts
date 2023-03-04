@@ -1,7 +1,7 @@
 import {say} from '@/utils'
+import Bar from '@/views/bar'
 
 // jest使用测试
-
 function drinkAll(callback, flavour) {
   if (flavour !== 'octopus') {
     callback(flavour)
@@ -15,6 +15,10 @@ describe('T-webpack5:mock', () => {
 
     // 测试函数已经被调用
     expect(drink).toHaveBeenCalled()
+  })
+
+  test('Bar', () => {
+    expect(Bar()).toBeInstanceOf(Object)
   })
 })
 
