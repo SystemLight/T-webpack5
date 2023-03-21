@@ -39,5 +39,19 @@ module.exports = wcf({
       .rule('ts/tsx')
       .exclude
       .add(/[\\/]demo[\\/]foo.ts$/)
+
+    config.module.rules.delete('svg')
+    config
+      .module
+      .rule('svg')
+      .include
+      .add(path.join(__dirname, 'src/assets/svg/icons'))
+      .end()
+      .test(/\.svg$/i)
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]'
+      })
   }
 })

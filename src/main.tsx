@@ -7,6 +7,7 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
 
 import App from '@/App'
+import '@/assets/svg'
 
 dayjs.locale('zh-cn')
 console.log(process.env.AUTHOR)
