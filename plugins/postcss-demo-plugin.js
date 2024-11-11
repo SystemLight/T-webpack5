@@ -5,6 +5,14 @@ module.exports = () => {
       if (rule.selector === '.foo-rect') {
         rule.selector = '.bar-rect'
       }
+    },
+    AtRule: {
+      charset: (atRule) => {
+        // 移除所有 @charset
+        if (atRule.name === 'charset') {
+          atRule.remove()
+        }
+      }
     }
   }
 }
